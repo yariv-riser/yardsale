@@ -26,7 +26,7 @@ export async function POST(request) {
     }
 
     // Upload to Vercel Blob
-    const blob = await put(file.name, file, { access: 'private' });
+    const blob = await put(file.name, file, { access: 'public' });
 
     // Save to Database
     await sql`
