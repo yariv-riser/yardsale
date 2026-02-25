@@ -1,0 +1,121 @@
+.item-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .item-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.image-section {
+  flex: 1;
+  width: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-light-gray);
+  box-shadow: var(--shadow-sm);
+}
+
+.item-image {
+  object-fit: contain;
+}
+
+.details-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.item-price {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.meta-tags {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.meta-tag {
+  background-color: var(--color-background);
+  color: var(--color-accent);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.item-description {
+  margin-bottom: 2.5rem;
+}
+
+.item-description h2 {
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.item-description p {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.seller-info {
+  background-color: var(--color-background);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-top: auto;
+}
+
+.seller-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.seller-avatar {
+  border-radius: 50%;
+}
+
+.btn-contact {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #25D366; /* WhatsApp Green */
+  color: var(--color-white);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-contact:hover {
+  background-color: #128C7E;
+}

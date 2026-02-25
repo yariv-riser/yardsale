@@ -1,0 +1,35 @@
+.hero-container {
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.hero-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-accent);
+  opacity: 0.9;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.hero-item {
+  height: 100%;
+}
