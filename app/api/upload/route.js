@@ -5,14 +5,14 @@ import { sql } from '../../../lib/db';
 
 export async function POST(request) {
   const session = await auth();
-  
+
   if (!session || !session.user) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {
     const formData = await request.formData();
-    
+
     const file = formData.get('image');
     const title = formData.get('title');
     const description = formData.get('description');
@@ -26,7 +26,7 @@ export async function POST(request) {
     }
 
     // Upload to Vercel Blob
-    const blob = await put(file.name, file, { access: 'public' });
+    const blob = await put(file.name, file, { access: 'private' });
 
     // Save to Database
     await sql`
