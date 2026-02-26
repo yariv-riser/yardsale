@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ItemPage({ params }) {
-  const { id } = params;
+  const { id } = await params;
 
   // Increment views
   await sql`UPDATE items SET views = views + 1 WHERE id = ${id}`;
@@ -42,20 +42,20 @@ export default async function ItemPage({ params }) {
     <div className={styles['item-container']}>
       <div className={styles['image-section']}>
         <div className={styles['image-wrapper']}>
-          <Image 
-            src={item.image_url} 
-            alt={item.title} 
-            fill 
-            className={styles['item-image']} 
+          <Image
+            src={item.image_url}
+            alt={item.title}
+            fill
+            className={styles['item-image']}
             priority
           />
         </div>
       </div>
-      
+
       <div className={styles['details-section']}>
         <h1 className={styles['item-title']}>{item.title}</h1>
         <p className={styles['item-price']}>₪{item.price}</p>
-        
+
         <div className={styles['meta-tags']}>
           <span className={styles['meta-tag']}>{item.category}</span>
           <span className={styles['meta-tag']}>{item.condition}</span>
