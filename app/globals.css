@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap'); /* Using Open Sans as fallback if Google Sans not available publicly, but will try to use the name */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght,ELSH@100..900,2&display=swap');
 
 :root {
   --color-primary: #00843D;
@@ -9,13 +10,13 @@
   --color-white: #ffffff;
   --color-light-gray: #e0e0e0;
   --color-error: #d32f2f;
-  
+
   --font-family-main: 'Google Sans', 'Open Sans', sans-serif;
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -44,6 +45,20 @@ button {
   background: none;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: inherit;
+}
+
+*:has(input:required,
+  textarea:required,
+  select:required) {
+  label {
+    &:after {
+      content: " *";
+      color: red;
+    }
+  }
+
 }

@@ -16,7 +16,7 @@ export default function Feed({ initialItems }) {
     const matchCategory = filterCategory === 'הכל' || item.category === filterCategory;
     const matchCondition = filterCondition === 'הכל' || item.condition === filterCondition;
     const matchPrice = maxPrice === '' || parseFloat(item.price) <= parseFloat(maxPrice);
-    
+
     return matchCategory && matchCondition && matchPrice;
   });
 
@@ -25,8 +25,8 @@ export default function Feed({ initialItems }) {
       <aside className={styles['filter-sidebar']}>
         <div className={styles['filter-group']}>
           <label className={styles['filter-label']}>קטגוריה</label>
-          <select 
-            value={filterCategory} 
+          <select
+            value={filterCategory}
             onChange={(e) => setFilterCategory(e.target.value)}
             className={styles['filter-select']}
           >
@@ -36,8 +36,8 @@ export default function Feed({ initialItems }) {
 
         <div className={styles['filter-group']}>
           <label className={styles['filter-label']}>מצב</label>
-          <select 
-            value={filterCondition} 
+          <select
+            value={filterCondition}
             onChange={(e) => setFilterCondition(e.target.value)}
             className={styles['filter-select']}
           >
@@ -46,10 +46,10 @@ export default function Feed({ initialItems }) {
         </div>
 
         <div className={styles['filter-group']}>
-          <label className={styles['filter-label']}>מחיר מקסימלי (₪)</label>
-          <input 
-            type="number" 
-            value={maxPrice} 
+          <label className={styles['filter-label']}>מחיר מקסימלי</label>
+          <input
+            type="number"
+            value={maxPrice}
             onChange={(e) => setMaxPrice(e.target.value)}
             placeholder="ללא הגבלה"
             className={styles['filter-input']}
